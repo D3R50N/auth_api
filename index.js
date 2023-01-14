@@ -76,6 +76,6 @@ function create_token(req, res, next) {
 
 const middlewares = [setHeaders, auth, output];
 
-app.get("/", middlewares);
+app.get("/", config.middlewares, middlewares);
 
 app.get("/get-token", config.middlewares, create_token, middlewares);
